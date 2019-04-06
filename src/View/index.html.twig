@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block navbar %}
+    {% include 'navbar.html.twig' %}
+{%  endblock %}
+
+
+{% block jumbotron %}
+    {% include 'jumbotron.html.twig' %}
+{%  endblock %}
+
+{%  block title %}
+    <title>Hello, TWIG!</title>
+{%  endblock %}
+
+{% block content %}
+    <div class="row w-100">
+        {% for product in products %}
+            {%  set counter =counter+1 %}
+            <div class="col-md-4 my-3 border-success">
+                <div class="card-header bg-secondary text-white">
+                    <div class="text-center mt-3"><h4>Produit {{ counter }}</h4></div>
+                </div>
+                <div class="card border-info p-3">
+                    <div class="text-success text-center mt-2 p-5"><h1>{{ product }}</h1></div>
+                </div>
+            </div>
+        {% endfor %}
+
+     </div>
+{% endblock %}
